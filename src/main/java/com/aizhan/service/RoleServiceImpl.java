@@ -29,7 +29,7 @@ public class RoleServiceImpl implements RoleService{
         List<String> stringList = roleList.stream()
                 .map((role) -> role.getRole()).collect(Collectors.toList());
         stringList.forEach(System.out::println);
-        return stringList;
+        return stringList; 
     }
 
     @Override

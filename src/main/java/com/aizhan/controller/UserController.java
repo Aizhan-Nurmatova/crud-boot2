@@ -32,6 +32,7 @@ public class UserController {
         List<User> users = new ArrayList<>();
         for (User user : userService.listUsers()) {
             users.add(new User(user.getId(), user.getName(), user.getSurname(), user.getEmail()));
+            System.out.println(user);
         }
         return users.stream().sorted(Comparator.comparing(User::getId)).collect(Collectors.toList());
     }
@@ -51,7 +52,7 @@ public class UserController {
     }
 
 
-    @PutMapping("/update ")
+    @PutMapping("/update")
     @CrossOrigin
     public ResponseEntity<User> updateUser(@RequestBody User user) {
         try {
